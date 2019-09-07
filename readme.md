@@ -13,7 +13,7 @@ chmod -R 777 storage bootstrap/cache
 
 php artisan key:generate
 
-Настроить DB_ константы в .env
+Настроить DB_ константы в .env для бд админки
 
 php artisan migrate
 ```
