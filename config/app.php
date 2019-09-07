@@ -2,6 +2,9 @@
 
 return [
 
+    'apiUrl' => env('API_URL'),
+    'adminToken' => env('ADMIN_API_TOKEN'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

@@ -15,5 +15,18 @@ php artisan key:generate
 
 Настроить DB_ константы в .env для бд админки
 
+Указать API_URL в том формате, в котором он указан в примере
+
+Указать ADMIN_API_TOKEN для админа из таблицы users
+
 php artisan migrate
+```
+
+Если будут проблемы с кешированием, можно позапускать команды
+
+```
+php artisan cache:clear
+php artisan route:cache
+php artisan config:clear
+php artisan view:clear
 ```
