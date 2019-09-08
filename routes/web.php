@@ -28,4 +28,7 @@ Route::group($middleware, function() {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     Route::get('/users', 'CrudController@users')->name('users');
     Route::get('/objects', 'CrudController@objects')->name('objects');
+    Route::get('/objects/{id}/delete', 'CrudController@deleteObject')->name('deleteObject');
+    Route::get('/objects/{id}/edit', 'CrudController@editObject')->name('editObject');
+    Route::post('/objects/{id}/update', 'CrudController@updateObject')->name('updateObject');
 });

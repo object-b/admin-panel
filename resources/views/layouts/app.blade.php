@@ -77,7 +77,21 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                <div class="row justify-content-center">
+                    @if (session('status'))
+                        <div class="col-md-12">
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        </div>
+                    @endif
+
+                    <div class="col-md-12">
+                        @yield('content')
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>
