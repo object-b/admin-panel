@@ -9,20 +9,34 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                @foreach ($response['cols'] as $column)
-                                    <th scope="col">{{ $column }}</th>
-                                @endforeach
-
+                                <th scope="col">id</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Creator</th>
+                                <th scope="col">Resolver</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Size</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Created</th>
+                                <th scope="col">Closed</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($response['rows'] as $rows)
+                            @foreach ($response['data'] as $row)
                                 <tr>
-                                    @foreach ($rows as $row)
-                                        <td>{{ $row }}</td>
-                                    @endforeach
-
+                                    <td>{{ $row['id'] }}</td>
+                                    <td>
+                                        <a href="{{ $row['first_image'] }}" target="_blank">
+                                            <img src="{{ $row['first_image'] }}" alt="" style="max-width: 70px;">
+                                        </a>
+                                    </td>
+                                    <td>{{ $row['author'] }}</td>
+                                    <td>{{ $row['resolver'] }}</td>
+                                    <td>{{ $row['status'] }}</td>
+                                    <td>{{ $row['size'] }}</td>
+                                    <td>{{ $row['type'] }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($row['date_created'])->toDateTimeString() }}</td>
+                                    <td>{{ $row['date_closed'] ? \Carbon\Carbon::parse($row['date_closed'])->toDateTimeString() : '' }}</td>
                                     <td>
                                         <a href="#">Edit</a>
                                         <a href="#">Delete</a>
