@@ -3,7 +3,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('updateObject', ['id' => $id]) }}" method="POST">
+        <form action="{{ route($route, ['id' => $id]) }}" method="POST">
             @csrf
             @foreach ($response['data'] as $column => $row)
                 <div class="form-group">

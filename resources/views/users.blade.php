@@ -29,8 +29,7 @@
                         <td>{{ $row['points'] }}</td>
                         <td>{{ \Carbon\Carbon::parse($row['date_created'])->toDateTimeString() }}</td>
                         <td>
-                            <a href="#">Edit</a>
-                            <a href="#">Delete</a>
+                            <a href="{{ route('editUser', ['id' => $row['id']]) }}">Edit</a>
                         </td>
                     </tr>
                 @endforeach

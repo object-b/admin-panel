@@ -31,8 +31,17 @@ class CrudController extends Controller
     public function editObject($id)
     {
         $response = ApiRequest::run('get', 'api/admin/objects/' . $id);
+        $route = 'updateObject';
         
-        return view('edit', compact('response', 'id'));
+        return view('edit', compact('response', 'id', 'route'));
+    }
+
+    public function editUser($id)
+    {
+        $response = ApiRequest::run('get', 'api/admin/users/' . $id);
+        $route = 'updateUser';
+        
+        return view('edit', compact('response', 'id', 'route'));
     }
 
     public function updateObject(Request $request, $id)
@@ -40,6 +49,13 @@ class CrudController extends Controller
         $response = ApiRequest::run('put', 'api/admin/objects/' . $id, $request->except('_token'));
         
         return redirect('objects')->with('status', 'Object updated!');
+    }
+
+    public function updateUser(Request $request, $id)
+    {
+        $response = ApiRequest::run('put', 'api/admin/users/' . $id, $request->except('_token'));
+        
+        return redirect('users')->with('status', 'User updated!');
     }
 
     public function deleteObject($id)
