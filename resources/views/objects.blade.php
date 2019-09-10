@@ -36,7 +36,7 @@
                         <td>{{ $row['date_closed'] ? \Carbon\Carbon::parse($row['date_closed'])->toDateTimeString() : '' }}</td>
                         <td>
                             <a href="{{ route('editObject', ['id' => $row['id']]) }}">Edit</a>
-                            <a href="{{ route('deleteObject', ['id' => $row['id']]) }}">Delete</a>
+                            <a onclick="return confirm('are you sure?')" href="{{ route('deleteObject', ['id' => $row['id']]) }}">Delete</a>
                         </td>
                     </tr>
                 @endforeach
