@@ -13,11 +13,11 @@ chmod -R 777 storage bootstrap/cache
 
 php artisan key:generate
 
-Настроить DB_ константы в .env для бд админки
+Настроить DB_ константы в .env для админки
 
 Указать API_URL в том формате, в котором он указан в примере
 
-Указать ADMIN_API_TOKEN для админа из таблицы users
+Указать ADMIN_API_TOKEN для пользователя администратора
 
 php artisan migrate
 ```
