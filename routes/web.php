@@ -27,12 +27,19 @@ Route::group($middleware, function() {
 
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     
+    // Objects
     Route::get('/objects', 'CrudController@objects')->name('objects');
     Route::get('/objects/{id}/edit', 'CrudController@editObject')->name('editObject');
     Route::post('/objects/{id}/update', 'CrudController@updateObject')->name('updateObject');
     Route::get('/objects/{id}/delete', 'CrudController@deleteObject')->name('deleteObject');
 
+    // Users
     Route::get('/users', 'CrudController@users')->name('users');
     Route::get('/users/{id}/edit', 'CrudController@editUser')->name('editUser');
     Route::post('/users/{id}/update', 'CrudController@updateUser')->name('updateUser');
+    
+    // Users roles
+    Route::get('/users/roles', 'CrudController@userRoles')->name('userRoles');
+    Route::get('/users/roles/{id}/edit', 'CrudController@editUserRole')->name('editUserRole');
+    Route::post('/users/roles/{id}/update', 'CrudController@updateUserRole')->name('updateUserRole');
 });

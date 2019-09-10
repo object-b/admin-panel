@@ -38,6 +38,9 @@
                             <a class="nav-link" href="{{ url('/users') }}">Users</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/users/roles') }}">User roles</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('/objects') }}">Objects</a>
                         </li>
                     </ul>
